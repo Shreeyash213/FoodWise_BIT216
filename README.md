@@ -14,7 +14,7 @@ and meal planning.
 ## Tech Stack
 PHP | MySQL | Bootstrap 5 | HTML | CSS
 
-## Team Members
+
 ## Team Members
 | Name | Student ID | Role | Use Cases |
 
