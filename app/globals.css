@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bg text-paper font-body antialiased;
+  }
+  ::selection {
+    @apply bg-gold text-shelf;
+  }
+  :focus-visible {
+    outline: 2px solid #E7AC3F;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .label-stamp {
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .fill-mask {
+    clip-path: inset(0 0 0 0 round 999px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Light-mode overrides when `html` has the `light` class */
+html.light body {
+  background-color: #f7faf9; /* light background */
+  color: #0f1720; /* darker text */
+}
+html.light .bg-bg {
+  background-color: #f7faf9 !important;
+}
+html.light .bg-surface {
+  background-color: #ffffff !important;
+}
+html.light .bg-surface-2 {
+  background-color: #f3f4f6 !important;
+}
+html.light .bg-shelf {
+  background-color: #f1f5f9 !important;
+}
+html.light .text-paper {
+  color: #071017 !important;
+}
+html.light .text-sage {
+  color: #25603a !important;
+}
+html.light .text-sage-dim {
+  color: #3b6b52 !important;
+}
+html.light .ring-sage-dim\/15 {
+  box-shadow: 0 0 0 1px rgba(94,115,96,0.15) !important;
+}
