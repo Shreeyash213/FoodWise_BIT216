@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { ShieldCheck, ArrowLeft } from "lucide-react";
 
+import PasswordInput from "@/components/PasswordInput";
+
 export default function LoginPage() {
   const router = useRouter();
 
@@ -60,7 +62,7 @@ export default function LoginPage() {
         JSON.stringify(data.user)
       );
 
-      router.push("/home");
+      router.push("/");
 
     } catch (error) {
       console.error(error);
@@ -118,24 +120,14 @@ export default function LoginPage() {
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium text-sage">
-              Password
-            </label>
-
-            <input
-              type="password"
-              value={password}
-              onChange={(e) =>
-                setPassword(
-                  e.target.value
-                )
-              }
-              placeholder="••••••••"
-              required
-              className="mt-2 w-full rounded-2xl border border-sage-dim/20 bg-shelf/70 px-4 py-3 text-paper outline-none focus:border-gold focus:ring-2 focus:ring-gold/20"
-            />
-          </div>
+          <PasswordInput
+            label="Password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="••••••••"
+            required
+          />
 
           {error && (
             <p className="text-sm text-red-500">
@@ -163,7 +155,7 @@ export default function LoginPage() {
           </Link>
 
           <Link
-            href="/home"
+            href="/"
             className="flex items-center gap-2 hover:text-paper"
           >
             <ArrowLeft size={16} />
